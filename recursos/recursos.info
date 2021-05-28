@@ -65,17 +65,59 @@ entrar no diretorio do projeto em:
 ~/Documents/cursoDjango$ <<<diretório que será versionado>>>
 
 comandos git:
--inicializa repositorio git no nivel relativo ao diretorio atual.
+-->inicializa repositorio git no nivel relativo ao diretorio atual.
 (Esse diretorio passa a ser um repositorio git)
 git init
--criando o arquivo .gitignore
+-->criando o arquivo .gitignore
 (nesse caso vamos ignorar o versionamento da venv)
 adicionamos nesse arquivo venv
--adcionaremos os arquivos agora ao repositorio local.
-git add .
-
--
+-->verificando o status
 git status
+----fazendo o comit----
+-->adcionaremos os arquivos agora ao repositorio local.
+git add .
+-->adcionando o repositório remote
+git remote add origin https://github.com/rprojetos/estudoDjango3.git
+(comando push que deve ser executado só na primeira vez )
+git push -u origin master 
+
+-git commit  -m "First Commit"
+# git push origin master
+git push -u origin main
+
+# caso seja necessário remover repositorio remoto do local
+git remote rm origin
+
+
+Configurar o ambiente local no Git
+####################################################################
+Abrir cmd no diretório raiz do projeto.
+####################################################################
+Caso o usuário não esteja configurado...
+Para configurar o usuário digite:
+git config --global user.name "rprojetos" < enter >
+Para criar o e-mail digite:
+git config --global user.email "rprojetos.ti@hotmail.com" < enter >
+Para o Git gerenciar arquivos longos digite:
+git config --system core.longpaths true
+Para verificar a lista de configurações digite:
+git config --list < enter >
+
+comitando ... 
+echo "# estudoDjango3" >> README.md
+git init
+# git add README.md
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/rprojetos/estudoDjango3.git
+git push -u origin main
+
+-listar branchs
+git branch -v
+
+
+
 
 
 
