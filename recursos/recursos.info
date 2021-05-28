@@ -1,0 +1,89 @@
+Documentação Django
+https://docs.djangoproject.com/pt-br/3.2/
+
+
+
+python3 -m venv venv
+source ./venv/bin/activate
+
+https://www.djangoproject.com/download/
+pip install Django==3.2.3
+
+pip freeze
+pip freeze > requeriments.txt
+
+pip install -r requeriments.txt
+
+django-admin startproject blog
+
+cd blog
+python manage.py runserver
+http://127.0.0.1:8000/
+
+Populando o db
+(criando tablelas)
+python manage.py migrate
+
+
+python manage.py createsuperuser
+
+usuario(deixar em branco para uso do usuario padrão)
+email --> deixar em branco.
+senha: minimo de 8 caracteres
+
+-------------------------------------------------------
+1.criando uma app com o nome website
+python manage.py startapp website
+
+2.Ao ser criada uma app esta deve ser registrada no settings.py
+na lista INSTALLED_APPS acrescentamos 'website'
+
+3.Criando a classe Post em models.py
+class Post(models.Model)
+
+4.Criando a estrutura do model Post em migrations
+python manage.py makemigrations
+
+5.Criando a tabela Post no db
+python manage.py migrate
+
+6.Registrando o model Post para que apareça no admin do django
+... em website/admin.py
+Nesse caso o model irá aparecer no admin
+
+7.A partir do admin, podemos popular a tabela Post.
+http://127.0.0.1:8000/admin/website/
+
+8.Usando o git / instalação
+https://git-scm.com/download
+
+sudo apt install git
+...online no github
+cria repositorio: https://github.com/rprojetos/estudoDjango3
+
+entrar no diretorio do projeto em:
+~/Documents/cursoDjango$ <<<diretório que será versionado>>>
+
+comandos git:
+-inicializa repositorio git no nivel relativo ao diretorio atual.
+(Esse diretorio passa a ser um repositorio git)
+git init
+-criando o arquivo .gitignore
+(nesse caso vamos ignorar o versionamento da venv)
+adicionamos nesse arquivo venv
+-adcionaremos os arquivos agora ao repositorio local.
+git add .
+
+-
+git status
+
+
+
+
+
+
+
+
+
+
+
