@@ -54,7 +54,27 @@ Nesse caso o model irá aparecer no admin
 7.A partir do admin, podemos popular a tabela Post.
 http://127.0.0.1:8000/admin/website/
 
-8.Usando o git / instalação
+
+8.Configurando as urls do projeto em 
+blog/urls.py incluindo o caminho website.urls
+
+em website.urls que tem uma url vazia que chama hello_blog 
+que é uma função importada de website.views
+e em view temos o retorno onde temos um retorno de uma string
+usando a função HttpResponse
+
+Porem para que seja feito a rederização de um template
+usaremos a função render aqui em website.views
+que retornará então o index.html
+
+o index.html é um arquivo que estará presente no diretório website.templates
+
+
+
+
+
+#####################################
+##### Usando o git / instalação #####
 https://git-scm.com/download
 
 sudo apt install git
@@ -63,27 +83,6 @@ cria repositorio: https://github.com/rprojetos/estudoDjango3
 
 entrar no diretorio do projeto em:
 ~/Documents/cursoDjango$ <<<diretório que será versionado>>>
-
-comandos git:
--->inicializa repositorio git no nivel relativo ao diretorio atual.
-(Esse diretorio passa a ser um repositorio git)
-git init
--->criando o arquivo .gitignore
-(nesse caso vamos ignorar o versionamento da venv)
-adicionamos nesse arquivo venv
--->verificando o status
-git status
-----fazendo o comit----
--->adcionaremos os arquivos agora ao repositorio local.
-git add .
--->adcionando o repositório remote
-git remote add origin https://github.com/rprojetos/estudoDjango3.git
-(comando push que deve ser executado só na primeira vez )
-git push -u origin master 
-
--git commit  -m "First Commit"
-# git push origin master
-git push -u origin main
 
 # caso seja necessário remover repositorio remoto do local
 git remote rm origin
@@ -115,6 +114,12 @@ git push -u origin main
 
 -listar branchs
 git branch -v
+
+comitando novas alterações...
+git add .
+git commit -m "adicionando novo comando"
+git push origin main
+
 
 
 
