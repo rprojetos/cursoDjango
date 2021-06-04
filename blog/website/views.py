@@ -14,7 +14,7 @@ def hello_blog(request):
         'Systemctl'
     ]
 
-    # list_posts = Post.objects.filter()
+    # list_posts = Post.objects.filter(approved=True)
     list_posts = Post.objects.all()
 
     data = {

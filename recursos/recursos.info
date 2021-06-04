@@ -1,10 +1,14 @@
 Documentação Django
 https://docs.djangoproject.com/pt-br/3.2/
 
-
+windows Power Shell - modificação da politica de segurança
+Set-ExecutionPolicy -Scope Process Unrestricted 
+Set-ExecutionPolicy -Scope CurrentUser Unrestricted
+Set-ExecutionPolicy Unrestricted
 
 python3 -m venv venv
-source ./venv/bin/activate
+source ./venv/bin/activate    (Linux)
+venv/Scripts/Activate.ps1     (Windows PS)
 
 https://www.djangoproject.com/download/
 pip install Django==3.2.3
