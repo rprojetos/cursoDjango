@@ -12,6 +12,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/imagecss.css' %}" />
 	</head>
 	<body class="is-preload">
 
@@ -47,10 +48,19 @@
 							 
 							{% for post in posts %}
 								<article class="col-6 col-12-xsmall work-item">
-									<a href="{% static 'images/fulls/01.jpg' %}" class="image fit thumb"><img src="{% static 'images/thumbs/01.jpg' %}" alt="" /></a>
+									<!-- <a href="{% static 'images/fulls/01.jpg' %}" class="image fit thumb"><img src="{% static 'images/thumbs/01.jpg' %}" alt="" /></a> -->
+									{% if post.image %}
+										<a href="{{ post.image.url }}"><img src="{{ post.image.url }}" alt="" class="indexPost"/></a>
+									{% else %}
+										<a href="{% static 'images/fulls/01.jpg' %}" class="image fit thumb"><img src="{% static 'images/thumbs/01.jpg' %}" alt="" /></a>
+									{% endif %}
+
 									<h3>{{ post.title }}</h3>
 									<p>{{ post.sub_title }}</p>
 									<span>{{ post.get_categories_display }}</span>
+									<ul class="actions">
+										<li><a href="{% url 'post_detail_name' post.id %}" class="button">Leia mais</a></li>
+									</ul>
 								</article>
 							{% endfor %}
 

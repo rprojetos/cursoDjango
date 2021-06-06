@@ -16,6 +16,7 @@ class Post(models.Model):
     )
 
     approved = models.BooleanField(default=True)
+    image = models.ImageField(upload_to='posts', null=True, blank=True)
 
     def title_subtitle(self):
         return self.title + ' - ' + self.sub_title
