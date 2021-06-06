@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, Contatic
 
 class PostAdmin(admin.ModelAdmin):
     list_display = [
@@ -13,4 +13,5 @@ class PostAdmin(admin.ModelAdmin):
         #return Post.objects.filter(approved=True)
 
 admin.site.register(Post, PostAdmin)
+admin.site.register(Contatic)
 

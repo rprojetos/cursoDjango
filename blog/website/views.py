@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post
+from .models import Post, Contatic
 
 def hello_blog(request):
     lista = [
@@ -28,3 +28,13 @@ def hello_blog(request):
 def post_detail(request, id):
     post = Post.objects.get(id=id)
     return render(request, 'post_detail.html', {'post': post})
+
+def save_form(request):
+    # print(request.POST)
+    name=request.POST['name']
+    Contatic.objects.create(
+        name=name,
+        email=request.POST['email'],
+        message=request.POST['message']
+    )
+    return render(request, 'contact_success.html', {'name_contact':name})
